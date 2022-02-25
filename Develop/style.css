@@ -1,1 +1,160 @@
+* {
+  -webkit-font-smoothing: antialiased;
+}
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body {
+  font-family: proxima-soft, sans-serif;
+  font-weight: 400;
+}
+.container {
+  max-width: 720px;
+  padding: 0 30px;
+}
+.col {
+  padding-top: 30px;
+}
+.col-small {
+  max-width: 120px;
+}
+main.container {
+  margin-bottom: 50px;
+}
+@media screen and (max-width: 575px) {
+  .col-small {
+    max-width: 90px;
+    padding-right: 0;
+  }
+  main.container {
+    margin-bottom: 30px;
+  }
+}
+/* —————————— HEADER —————————— */
+header {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding: 100px 0 30px;
+  margin-bottom: 50px;
+}
+h1 {
+  font-size: 38px;
+  line-height: 1.1;
+  color: #fff;
+}
+h1 span {
+  display: block;
+  font-size: 17px;
+  line-height: 1.5;
+  opacity: 0.75;
+}
+img {
+  text-align: center;
+  max-width: 100%;
+}
 
+/* —————————— TIME —————————— */
+.circle,
+.hour {
+  display: inline-block;
+}
+.hour-block .hour {
+  font-weight: 600;
+  line-height: 18px;
+  vertical-align: middle;
+  margin-left: 5px;
+  width: 60px;
+  text-align: center;
+  color: #bbb;
+}
+.hour-block.current .hour,
+.hour-block.future .hour {
+  color: #1e1e1e;
+}
+.time {
+  margin-top: -14px;
+}
+.hour-block .circle {
+  height: 8px;
+  width: 8px;
+  background: #ccc;
+  border-radius: 50%;
+  z-index: auto;
+  position: relative;
+  top: 1px;
+}
+.hour-block.current .circle,
+.hour-block.future .circle {
+  background: #3b59ff;
+}
+.hour-block.current .circle:after {
+  content: " ";
+  height: 18px;
+  width: 18px;
+  position: absolute;
+  margin-top: -5px;
+  left: -5px;
+  border-radius: 50%;
+  border: 2px solid #3b59ff;
+  animation: border-pulsate 2s infinite;
+  background: #fff;
+  z-index: -1;
+}
+@keyframes border-pulsate {
+  0% {
+    border-color: rgba(59, 89, 255, 1);
+  }
+  50% {
+    border-color: rgba(59, 89, 255, 0);
+  }
+  100% {
+    border-color: rgba(59, 89, 255, 1);
+  }
+}
+@media screen and (max-width: 575px) {
+  header {
+    padding: 60px 0 30px;
+  }
+  .hour-block .hour {
+    font-size: 14px;
+    width: 50px;
+  }
+}
+/* —————————— FORM/TEXTAREA —————————— */
+form.col {
+  border-top: 1px solid #ebebeb;
+  margin: 0 15px;
+  padding: 0;
+}
+.hour-block textarea {
+  width: 100%;
+  border-radius: 0;
+  border: none;
+  padding: 10px;
+  height: 44px;
+  margin-bottom: -6px;
+  opacity: 0.25;
+}
+.hour-block textarea:focus {
+  background: rgba(252, 199, 51, 0.5);
+  outline: none;
+  padding-top: 20px;
+}
+.hour-block.current textarea,
+.hour-block.future textarea {
+  opacity: 1;
+}
+/* —————————— AFTER HOURS —————————— */
+#after-hours {
+  margin: 20px 0;
+  font-weight: 600;
+  text-align: center;
+}
+@media screen and (max-width: 575px) {
+  #after-hours {
+    margin: 30px auto 0;
+    font-weight: 600;
+    max-width: 280px;
+  }
+}
